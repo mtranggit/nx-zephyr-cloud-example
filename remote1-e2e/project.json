@@ -1,0 +1,19 @@
+{
+  "name": "remote1-e2e",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "remote1-e2e/src",
+  "implicitDependencies": ["remote1"],
+  "targets": {
+    "e2e": {
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/dist/.playwright/remote1-e2e"],
+      "options": {
+        "config": "remote1-e2e/playwright.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
